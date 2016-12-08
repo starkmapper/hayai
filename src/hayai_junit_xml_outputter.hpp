@@ -51,7 +51,7 @@ namespace hayai
             std::string Time;
             bool Skipped;
         };
-
+        friend TestCase;
 
         /// Test suite map.
         typedef std::map<std::string, std::vector<TestCase> > TestSuiteMap;
