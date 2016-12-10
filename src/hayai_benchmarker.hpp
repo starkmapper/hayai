@@ -348,8 +348,10 @@ namespace hayai
         {
 
         }
-
-
+        // Borland doesn't like private destructors...
+        #ifdef __BORLANDC__
+    public:
+        #endif
         /// Private destructor.
         ~Benchmarker()
         {
@@ -358,6 +360,9 @@ namespace hayai
             while (index--)
                 delete _tests[index];
         }
+        #ifdef __BORLANDC__
+    private:
+        #endif
 
 
         /// Get the tests to be executed.
