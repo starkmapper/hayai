@@ -51,9 +51,13 @@ namespace hayai
 
             startTime = Clock::Now();
 
+            PreRun();
+
             // Run the test body for each iteration.
             while (iteration--)
                 TestBody();
+
+            PostRun();
 
             // Get the ending time.
             endTime = Clock::Now();
@@ -71,6 +75,16 @@ namespace hayai
 
         }
     protected:
+        virtual void PreRun()
+        {
+
+        }
+
+        virtual void PostRun()
+        {
+
+        }
+
         /// Test body.
 
         /// Executed for each iteration the benchmarking test is run.
